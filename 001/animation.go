@@ -57,7 +57,7 @@ type Animation struct {
 }
 
 func NewAnimation(width, height int) *Animation {
-	const NUM_PARTICLES = 100
+	const NUM_PARTICLES = 20000
 	a := &Animation{}
 	a.width = width
 	a.height = height
@@ -85,7 +85,7 @@ func (a *Animation) next() image.Image {
 
 	// ジョイントをつなげる
 	c.SetLineWidth(1)
-	threshold := float64(200)
+	threshold := float64(40)
 	for x := 0; x < len(a.particles); x++ {
 		for y := x + 1; y < len(a.particles); y++ {
 			xp := a.particles[x]
